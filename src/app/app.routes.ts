@@ -10,7 +10,7 @@ export const routes: Routes = [
     {'path': ':guestName', component:OpenPageComponent},
     {'path': ':guestName', children:[
         {'path': 'main','title':'Nesi & Yogta',component:MainPageComponent},
-        {'path': 'listTamu','title':'ListTamu', component:ListTamuComponent},
+        {'path': 'listTamu','title':'ListTamu88248824', component:ListTamuComponent},
     ]},
     
     {'path': '**', component: NotFoundComponent }
