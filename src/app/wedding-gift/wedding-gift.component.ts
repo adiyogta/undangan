@@ -1,0 +1,48 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-wedding-gift',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './wedding-gift.component.html',
+  styleUrls: ['./wedding-gift.component.css']
+})
+export class WeddingGiftComponent {
+  showBankCards = false;
+  showToast = false;
+  toastMessage = '';
+  toastBackground = '';
+
+  toggleBankCards() {
+    this.showBankCards = !this.showBankCards;
+  }
+  
+
+  copyToClipboard(text: string) {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        this.showToastMessage('Nomor rekening berhasil disalin', 'success');
+      },
+      (err) => {
+        this.showToastMessage('Gagal menyalin nomor rekening', 'error');
+      }
+    );
+  }
+
+  showToastMessage(message: string, type: string) {
+    this.toastMessage = message;
+    this.showToast = true;
+
+    // Memilih warna latar belakang berdasarkan jenis pesan
+    if (type === 'success') {
+      this.toastBackground = 'bg-green-500';
+    } else if (type === 'error') {
+      this.toastBackground = 'bg-red-500';
+    }
+
+    setTimeout(() => {
+      this.showToast = false;
+    }, 3000); // Hapus toast setelah 3 detik
+  }
+}

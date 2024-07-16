@@ -1,0 +1,106 @@
+.font-stalemate {
+    font-family: 'Stalemate', cursive;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+  }
+
+.blurr{
+    filter: blur(2px);
+}
+
+.cstm-bg {
+    background-color: rgba(131, 144, 111, 0.85);
+    background-image: linear-gradient(rgba(131, 144, 111, 0.15), rgba(131, 144, 111, 0.85)),
+                      url('https://lh3.googleusercontent.com/drive-viewer/AKGpihblECUHVrWsouMAG7BerzCiJevbmaX30GFgM02yN6gU26uhoV5tVj5xxINRPmRNq3VD_5PGlnOHwIvIkn4EQfwGXolrWIcNFA=s1600-rw-v1');
+    background-size: cover;
+    background-position: center;
+}
+
+.cstm-bg-1 {
+  background: radial-gradient(rgba(254, 250, 225, 0), rgba(254, 250, 225, 0.65));
+}
+
+  
+.bg-dual {
+    position: relative;
+    background-color: rgba(131, 144, 111, 1);
+  background-position: center;
+  image-rendering: optimizeQuality;
+  }
+  
+  .bg-dual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpiha8eyUP2dqiG6zZ17_LIOSNCSnkrPRAuFZZ66mOZtePftYW5dSvq7tLd-IYgI647Y1z-v12-RbpZkRhrWp57BdFUYx80VL1-Rs=s1600-rw-v1');
+    background-size: cover;
+    background-position:  center;
+    image-rendering: optimizeQuality;
+    z-index: 0;
+    opacity: 0.75; /* Mengatur opacity jika perlu */
+    
+  }
+
+  .bg-dual::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    image-rendering: optimizeQuality;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1'), 
+    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1'),
+    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1'),
+    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1');
+    background-size: cover, cover,cover, cover;
+    background-position:center, center, bottom left, bottom right;
+    z-index: 0;
+    opacity: 1;
+     /* Mengatur opacity jika perlu */
+  }
+  
+  
+  .bg-card {
+    position: relative;
+ background-image: url('https://media.giphy.com/media/dlwGsKqnL4yCnScx2h/giphy.gif'),
+                   url('https://media.giphy.com/media/tNE9AUld7oQhBmLcfE/giphy.gif');   
+  background-position: center;
+  image-rendering: optimizeQuality;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: top,center;
+  opacity: 1;
+  }
+ 
+  .bg-card-2 {
+    position: relative;
+ background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1'),
+ url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1');
+  background-position: center;
+  image-rendering: optimizeQuality;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top,left bottom;
+  opacity: 1;
+  }
+
+
+  /* tambahkan di global CSS atau di file component CSS */
+.aspect-1-1 {
+  aspect-ratio: 1 / 1;
+}
+.aspect-2-1 {
+  aspect-ratio: 2 / 1;
+}
+.aspect-1-2 {
+  aspect-ratio: 1 / 2;
+}
+.aspect-3-4 {
+  aspect-ratio: 3 / 4;
+}

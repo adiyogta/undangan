@@ -1,0 +1,31 @@
+.full-screen-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihZq0TS7qutksG3skNjEdlW2wUXXdbnNa2aNrxJhconC2EIEYibg_nmpoo-ESWzgqpFH6ERtFXgmNC3jpuwQviKYGjcKj5jOsw=s1600-rw-v1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(5px);
+    transform: scale(1.01);
+  }
+
+  .zoom-out {
+    overflow: hidden;
+    animation: zoomOut 15s ease-in-out infinite;
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
