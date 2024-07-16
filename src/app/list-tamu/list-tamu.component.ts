@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 interface GuestResponse {
   data: Guest[];
@@ -10,10 +10,11 @@ interface GuestResponse {
 interface Guest {
   nama: string;
 }
+
 @Component({
   selector: 'app-list-tamu',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './list-tamu.component.html',
   styleUrl: './list-tamu.component.css'
 })
@@ -22,7 +23,11 @@ export class ListTamuComponent implements OnInit {
   loading = false;
   error: string | null = null;
 
-  constructor(private http: HttpClient,private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.fetchGuests();
@@ -37,6 +42,7 @@ export class ListTamuComponent implements OnInit {
         next: (response) => {
           this.guests = response.data;
           this.loading = false;
+          this.validateCurrentGuest();
         },
         error: (err) => {
           this.error = 'Terjadi kesalahan saat memuat data.';
@@ -45,6 +51,17 @@ export class ListTamuComponent implements OnInit {
         },
       });
   }
+
+  validateCurrentGuest() {
+    const guestName = this.route.parent?.snapshot.paramMap.get('guestName');
+    if (guestName) {
+      const isValidGuest = this.guests.some(guest => guest.nama.toLowerCase() === decodeURIComponent(guestName).toLowerCase());
+      if (!isValidGuest) {
+        this.router.navigate(['/404']);
+      }
+    }
+  }
+
   navigateToGuestPage(guestName: string) {
     this.router.navigate([`/${encodeURIComponent(guestName)}`]);
   }
