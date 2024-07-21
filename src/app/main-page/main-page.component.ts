@@ -1,4 +1,4 @@
-import { Component,AfterViewInit, Renderer2, effect, signal, ViewChild } from '@angular/core';
+import { Component,AfterViewInit, Renderer2, effect, signal, ViewChild, ElementRef } from '@angular/core';
 import { MusikComponent } from '../musik/musik.component';
 import { FooterComponent } from "../footer/footer.component";
 import { GuestListComponent } from "../guest-list/guest-list.component";
@@ -13,7 +13,11 @@ import { WeddingGiftComponent } from "../wedding-gift/wedding-gift.component";
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
-export class MainPageComponent {
+export class MainPageComponent  {
+
+
+// -----------------
+
   preWeddingImage = 'https://lh3.googleusercontent.com/drive-viewer/AKGpihZmYLunFtOcEGka5KWsa0Td0eca88VtxRqCFgTSpCkYN-W2AXkzyHsZ9bVOoZtBXWFnDB5gH16YPLvcy35Vhd-ZcL5hum-Wxx4=s1600-rw-v1';
   photos = [
     { url: 'https://lh3.googleusercontent.com/drive-viewer/AKGpihZq0TS7qutksG3skNjEdlW2wUXXdbnNa2aNrxJhconC2EIEYibg_nmpoo-ESWzgqpFH6ERtFXgmNC3jpuwQviKYGjcKj5jOsw=s1600-rw-v1', title: 'Photo 1' },
