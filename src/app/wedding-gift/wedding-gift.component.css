@@ -4,7 +4,30 @@
     width: 100%;
     max-width: 280px; /* Sesuaikan ukuran maksimum sesuai kebutuhan */
     margin: 0 auto;
+    background: linear-gradient(135deg, #f0f0f0 25%, #ffffff 75%);
+    position: relative;
   }
+
+  .atm-card .chip {
+    background-color: #d4af37;
+}
+
+.atm-card button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.atm-card img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.qris-bg {
+  background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihacpDFdrqkFOI2ykEDsqY_c7KIyXOr1Bk7jz5_4lDBh2SqF8TM-PSUX92FvQg3GpCQ5z_FoD7TJ6bPkq9CrjhNEs-9rh0Kf25c=s1600-rw-v1');
+  background-position: center;
+  background-size: cover;
+}
   
   @media (min-width: 640px) {
     .atm-card {

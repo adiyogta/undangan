@@ -1,4 +1,4 @@
-<div class="h-screen overflow-y-scroll">
+<div class="h-screen overflow-y-scroll scroll-smooth focus:scroll-auto">
     <app-musik class="sticky top-0 z-50"></app-musik>
     <!-- section 1 -->
     <div class="bg-dual min-h-screen  flex items-center justify-center relative overflow-hidden">
@@ -24,7 +24,7 @@
 
 <div class="flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl relative z-10 container">
 <div class="w-full lg:w-2/2 mb-8 lg:mb-0 lg:mr-8">
- <img [src]="preWeddingImage" alt="Pre-wedding photo" class="w-full h-auto rounded-lg shadow-lg">
+ <img ngxScrollAnimate [src]="preWeddingImage" alt="Pre-wedding photo" class="w-full h-auto rounded-lg shadow-lg">
 </div>
 
 <div class="w-full lg:w-2/2 text-center lg:text-left"> 
@@ -39,26 +39,28 @@
 </div>
   
     <!-- section 3 -->
-    <div class="cstm-bg-1  min-h-screen max-h-screen flex flex-col items-center justify-center">
-      <h2 class="container text-md md:text-2xl font-semibold text-center pt-4 z-10">Maha suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan.</h2>
-      <h2 class="container text-md md:text-2xl font-semibold mb-2 text-center pb-4 z-10">Ya Allah rahmatilah pernikahan kami :</h2>
+    <div class="cstm-bg-1 min-h-screen flex flex-col items-center justify-center p-4">
+     <div class="container mb-1 mt-2 p-4">
+      <h2 class="text-sm md:text-2xl font-semibold text-center pb-2 z-10">Maha suci Allah yang telah menciptakan mahluk-Nya berpasang-pasangan.</h2>
+      <h2 class="text-sm md:text-2xl font-semibold mb-2 text-center z-10">Ya Allah rahmatilah pernikahan kami :</h2>
+     </div>
         
-      <div class="container mx-auto px-2 z-0 flex items-center justify-center mt-2">          
+      <div class="container mx-auto px-2 z-0 flex items-center justify-center mt-1 md:mt-2">          
           <!-- Card Profil -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
               <!-- Card 1 -->
-              <div class="p-4 text-center bg-card">
-                  <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbJLt0SWiwmMWAPuTw4-j932lcFViZzZ1oLRPEL8B8hXZS_bFrgq5SWJklj5wo5K0OvwS-LmwaqSOLuWiBzMhL8UyINFPnJycU=s1600-rw-v1" alt="Foto Profil Nesi" class="w-6/12 lg:w-2/3 w-full max-w-xs rounded-full mx-auto mb-4 shadow-md">
+              <div class="p-2 text-center bg-card">
+                  <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihbJLt0SWiwmMWAPuTw4-j932lcFViZzZ1oLRPEL8B8hXZS_bFrgq5SWJklj5wo5K0OvwS-LmwaqSOLuWiBzMhL8UyINFPnJycU=s1600-rw-v1" alt="Foto Profil Nesi" class="w-2/5 lg:w-2/3 w-full rounded-full mx-auto mb-10 md:mb-16 shadow-md">
                   <h3 class="text-4xl md:text-6xl font-stalemate mb-2">Nesi Septiani S.Pd</h3>
-                  <p class="text-md md:text-2xl">Putri dari Bapak Drs. Enceng & Ibu Tati Sumarti, S.Pd.SD</p>
+                  <p class="text-md md:text-2xl">Putri dari Bapak Drs. Enceng & Ibu Tati Sumarni, S.Pd.SD</p>
                   
               </div>
               <div class="text-center">
                 <h3 class="text-5xl md:text-8xl font-stalemate">&</h3>
               </div>
               <!-- Card 2 -->
-              <div class="p-4 text-center bg-card">
-                  <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZMWMI6TIy7ANJR4dNnVcc3JyPgNIki7KGmP6iWYhX_wQi-TuzYvhu1SH9KENueGKGgOkulkcklMEg3hhcCU6SD5uKfYRbcx74=s1600-rw-v1" alt="Foto Profil Yogta" class="w-6/12 lg:w-2/3 w-full max-w-xs rounded-full mx-auto mb-4 shadow-md">
+              <div class="p-2 text-center bg-card">
+                  <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihZMWMI6TIy7ANJR4dNnVcc3JyPgNIki7KGmP6iWYhX_wQi-TuzYvhu1SH9KENueGKGgOkulkcklMEg3hhcCU6SD5uKfYRbcx74=s1600-rw-v1" alt="Foto Profil Yogta" class="w-2/5 lg:w-2/3 w-full rounded-full mx-auto mb-10 md:mb-16 shadow-md">
                   <h3 class="text-4xl md:text-6xl font-stalemate mb-2">Adi Yogta Putra S.Kom</h3>
                   <p class="text-md md:text-2xl">Putra dari Bapak Wakid & Ibu Warsih</p>
               </div>
@@ -68,7 +70,7 @@
   
   
     <!-- section 4 -->
-    <div class=" cstm-bg min-h-screen max-h-screen flex items-center justify-center p-4 md:p-8 flex-col">
+    <div class=" cstm-bg min-h-screen flex items-center justify-center p-4 md:p-8 flex-col">
   
       <!-- Kartu yang Sudah Ada -->
       <div class=" bg-card-2 bg-white bg-opacity-90 container mx-auto rounded-tl-full rounded-tr-full md:rounded-full flex flex-col items-center justify-center shadow-lg p-12 md:p-14 mb-2 text-center">
@@ -93,21 +95,21 @@
        <!-- Kartu Baru -->
        <div class="bg-card-2 bg-white container bg-opacity-90 text-center mx-auto flex flex-col justify-center shadow-lg p-2 md:p-6 md:rounded-full">
         <p class="text-lg font-bold mb-2">Menuju Hari Bahagia</p>
-        <div class="flex space-x-4 items-center justify-center">
-          <div class="bg-white p-4 rounded-lg shadow">
-            <span class="text-4xl font-bold">{{ countdown().days }}</span>
+        <div class="flex space-x-2 items-center justify-center">
+          <div class="bg-white p-2 rounded-lg shadow">
+            <span class="text-3xl md:text-4xl font-bold">{{ countdown().days }}</span>
             <p class="text-sm text-gray-600">Days</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow">
-            <span class="text-4xl font-bold">{{ countdown().hours }}</span>
+          <div class="bg-white p-2 rounded-lg shadow">
+            <span class="text-3xl md:text-4xl font-bold">{{ countdown().hours }}</span>
             <p class="text-sm text-gray-600">Hours</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow">
-            <span class="text-4xl font-bold">{{ countdown().minutes }}</span>
+          <div class="bg-white p-2 rounded-lg shadow">
+            <span class="text-3xl md:text-4xl font-bold">{{ countdown().minutes }}</span>
             <p class="text-sm text-gray-600">Minutes</p>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow">
-            <span class="text-4xl font-bold">{{ countdown().seconds }}</span>
+          <div class="bg-white p-2 rounded-lg shadow">
+            <span class="text-3xl md:text-4xl font-bold">{{ countdown().seconds }}</span>
             <p class="text-sm text-gray-600">Seconds</p>
           </div>
         </div>
@@ -116,13 +118,14 @@
   
   
     <!-- section 5 Galeri-->
-    <div class=" min-h-screen flex flex-col items-center justify-start py-4 overflow-hidden">
-      <h1 class="text-6xl md:text-8xl font-semibold mb-6 mt-4 font-stalemate">Gallery</h1>
-      
+    <div class=" min-h-screen flex-col items-center text-center justify-start pb-8 overflow-hidden">
+      <div class="bg-[#fefae1] mb-6 shadow-lg pt-10 md:pt-12 pb-4 md:pb-8">
+      <h1 class="text-6xl md:text-8xl font-semibold font-stalemate">Gallery</h1>
+      </div>
       <div class="container mx-auto px-4 scrollbar-hide overflow-y-auto flex-grow" style="max-height: calc(100vh - 8rem);">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           @for (photo of photos; track photo.url; let i = $index) {
-            <div class="cursor-pointer" (click)="openModal(i)">
+            <div class="cursor-pointer transition duration-300 ease-in-out transform hover:scale-105" (click)="openModal(i)">
               <img [src]="photo.url" [alt]="photo.title" class="w-full h-64 object-cover rounded-lg shadow-md">
             </div>
           }
@@ -131,14 +134,16 @@
     </div>
   
     <!-- section 6 -->
-    <div class=" cstm-bg bg-green-700 min-h-screen flex-col py-8 text-center items-center justify-center">
-      <h1 class="bg-[#fefae1] p-4 justify-center md:text-8xl font-semibold mb-4 mt-4 font-stalemate">Love Story</h1>
+    <div class=" cstm-bg min-h-screen flex-col pb-8 items-center justify-center overflow-hidden">
+      <div class="bg-[#fefae1] mb-6 shadow-lg pt-10 md:pt-12 pb-4 md:pb-8 text-center">
+        <h1 class="text-6xl md:text-8xl font-semibold font-stalemate">Love Story</h1>
+      </div>
       <div class="container mx-auto px-4">
         <ol class="relative border-s border-gray-200 dark:border-gray-700 px-4">
             <li class="ms-4 bg-white p-6 rounded-lg my-4 flex items-center shadow-md">
                 <div class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white"></div>
                 <div class="sm:flex sm:items-center sm:justify-between w-full">
-                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpiha-EKF-LhE6ZUUHK-yURPXW16JbJhU5WnCRiAMSasMpk_4m4lGhJRr1Ib5GoRpVM5XpsLbFa-BVHMsLzOpKbwwo1faJVKWY5TI=s1600-rw-v1" alt="Pertemuan" class="w-32 h-32 rounded-xl object-cover mr-2 sm:order-1 sm:mb-0">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpiha-EKF-LhE6ZUUHK-yURPXW16JbJhU5WnCRiAMSasMpk_4m4lGhJRr1Ib5GoRpVM5XpsLbFa-BVHMsLzOpKbwwo1faJVKWY5TI=s1600-rw-v1" alt="Pertemuan" class="w-4/6 h-2/5 md:w-40 md:h-full rounded-xl object-cover mx-2 sm:order-1 sm:mb-0">
                     <div class="sm:ml-8 sm:flex-1">
                         <time class="mb-1 text-sm font-normal leading-none text-gray-400">Agustus 2014</time>
                         <h3 class="text-lg font-semibold text-gray-900">PERTEMUAN</h3>
@@ -149,7 +154,7 @@
             <li class="ms-4 bg-white p-6 rounded-lg my-4 flex items-center shadow-md">
                 <div class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white"></div>
                 <div class="sm:flex sm:items-center sm:justify-between w-full">
-                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihb3_1ESUeQng0pqOcRpwN5h3dUbrGkfWN568cSgzBqnbYraUlGAXMbI1HGfYTyowJfNtDxl3sXxrR5wXADGYml81KhAobiZCQ=s1600-rw-v1" alt="Pendekatan" class="w-32 h-32 rounded-xl object-cover mr-2 sm:order-1 sm:mb-0">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihb3_1ESUeQng0pqOcRpwN5h3dUbrGkfWN568cSgzBqnbYraUlGAXMbI1HGfYTyowJfNtDxl3sXxrR5wXADGYml81KhAobiZCQ=s1600-rw-v1" alt="Pendekatan" class="w-4/6 h-3/6 md:w-40 md:h-full rounded-xl object-cover mx-2 sm:order-1 sm:mb-0">
                     <div class="sm:ml-8 sm:flex-1">
                         <time class="mb-1 text-sm font-normal leading-none text-gray-400">Desember 2016</time>
                         <h3 class="text-lg font-semibold text-gray-900">PENDEKATAN</h3>
@@ -160,7 +165,7 @@
             <li class="ms-4 bg-white p-6 rounded-lg my-4 flex items-center shadow-md">
                 <div class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white"></div>
                 <div class="sm:flex sm:items-center sm:justify-between w-full">
-                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpiha-EKF-LhE6ZUUHK-yURPXW16JbJhU5WnCRiAMSasMpk_4m4lGhJRr1Ib5GoRpVM5XpsLbFa-BVHMsLzOpKbwwo1faJVKWY5TI=s1600-rw-v1" alt="Lamaran" class="w-32 h-32 rounded-xl object-cover mr-2 sm:order-1 sm:mb-0">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpiha-EKF-LhE6ZUUHK-yURPXW16JbJhU5WnCRiAMSasMpk_4m4lGhJRr1Ib5GoRpVM5XpsLbFa-BVHMsLzOpKbwwo1faJVKWY5TI=s1600-rw-v1" alt="Lamaran" class="w-40 h-full rounded-xl object-cover mx-2 sm:order-1 sm:mb-0">
                     <div class="sm:ml-8 sm:flex-1">
                         <time class="mb-1 text-sm font-normal leading-none text-gray-400">September 2023</time>
                         <h3 class="text-lg font-semibold text-gray-900">LAMARAN</h3>
@@ -171,7 +176,7 @@
             <li class="ms-4 bg-white p-6 rounded-lg my-4 flex items-center shadow-md">
                 <div class="absolute w-3 h-3 bg-white rounded-full mt-1.5 -start-1.5 border border-white"></div>
                 <div class="sm:flex sm:items-center sm:justify-between w-full">
-                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpiha-EKF-LhE6ZUUHK-yURPXW16JbJhU5WnCRiAMSasMpk_4m4lGhJRr1Ib5GoRpVM5XpsLbFa-BVHMsLzOpKbwwo1faJVKWY5TI=s1600-rw-v1" alt="Menikah" class="w-32 h-32 rounded-xl object-cover mr-2 sm:order-1 sm:mb-0">
+                    <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpiha-EKF-LhE6ZUUHK-yURPXW16JbJhU5WnCRiAMSasMpk_4m4lGhJRr1Ib5GoRpVM5XpsLbFa-BVHMsLzOpKbwwo1faJVKWY5TI=s1600-rw-v1" alt="Menikah" class="w-40 h-full rounded-xl object-cover mx-2 sm:order-1 sm:mb-0">
                     <div class="sm:ml-8 sm:flex-1">
                         <time class="mb-1 text-sm font-normal leading-none text-gray-400">Agustus 2024</time>
                         <h3 class="text-lg font-semibold text-gray-900">MENIKAH</h3>
