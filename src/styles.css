@@ -1,8 +1,4 @@
 @import "animate.css";
-@import './styles/animations.css';
-@import './styles/aspect-ratios.css';
-@import './styles/backgrounds.css';
-@import './styles/typography.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
