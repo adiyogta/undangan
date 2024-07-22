@@ -1,0 +1,38 @@
+/* Backgrounds */
+.cstm-bg {
+    background-color: rgba(131, 144, 111, 0.85);
+    background-image: linear-gradient(rgba(131, 144, 111, 0.15), rgba(131, 144, 111, 0.85)),
+                      url('https://lh3.googleusercontent.com/drive-viewer/AKGpihblECUHVrWsouMAG7BerzCiJevbmaX30GFgM02yN6gU26uhoV5tVj5xxINRPmRNq3VD_5PGlnOHwIvIkn4EQfwGXolrWIcNFA=s1600-rw-v1');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .cstm-bg-1 {
+    background: radial-gradient(rgba(254, 250, 225, 0), rgba(254, 250, 225, 0.65));
+  }
+  
+  
+  .bg-card {
+    position: relative;
+    background-image: url('https://media.giphy.com/media/dlwGsKqnL4yCnScx2h/giphy.gif'),
+                      url('https://media.giphy.com/media/tNE9AUld7oQhBmLcfE/giphy.gif');
+    background-position: center;
+    image-rendering: optimizeQuality;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: top, center;
+    opacity: 0.8;
+  }
+  
+  .bg-card-2 {
+    position: relative;
+    background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1'),
+                      url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1');
+    background-position: center;
+    image-rendering: optimizeQuality;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+    opacity: 1;
+  }
+  

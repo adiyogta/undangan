@@ -1,0 +1,13 @@
+/* Typography and Utilities */
+.font-stalemate {
+    font-family: 'Stalemate', cursive;
+  }
+  
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  
+  .blurr {
+    filter: blur(2px);
+  }
+  

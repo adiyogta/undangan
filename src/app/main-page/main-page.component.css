@@ -1,149 +1,43 @@
-/* Keyframes Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-50px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeInZoom {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes zoomOut {
-  0% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes zoomOut2 {
-  from { transform: scale(1.6); }
-  to { transform: scale(1); }
-}
-
-/* Animation for Sections */
-.animated-section {
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.animated-section > * {
-  opacity: 0;
-  animation-duration: 0.8s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-}
-
-.animated-section > *:nth-child(6n+1) { animation-name: fadeInUp; }
-.animated-section > *:nth-child(6n+2) { animation-name: fadeInLeft; }
-.animated-section > *:nth-child(6n+3) { animation-name: fadeInRight; }
-.animated-section > *:nth-child(6n+4) { animation-name: fadeInDown; }
-.animated-section > *:nth-child(6n+5) { animation-name: fadeInZoom; }
-.animated-section > *:nth-child(6n) { animation-name: fadeInUp; }
-
-/* Delay Animation */
-.animated-section > *:nth-child(1) { animation-delay: 0.05s; }
-.animated-section > *:nth-child(2) { animation-delay: 0.1s; }
-.animated-section > *:nth-child(3) { animation-delay: 0.15s; }
-.animated-section > *:nth-child(4) { animation-delay: 0.2s; }
-.animated-section > *:nth-child(5) { animation-delay: 0.25s; }
-.animated-section > *:nth-child(6) { animation-delay: 0.3s; }
-.animated-section > *:nth-child(7) { animation-delay: 0.35s; }
-.animated-section > *:nth-child(8) { animation-delay: 0.4s; }
-.animated-section > *:nth-child(9) { animation-delay: 0.45s; }
-.animated-section > *:nth-child(10) { animation-delay: 0.5s; }
-.animated-section > *:nth-child(11) { animation-delay: 0.55s; }
-.animated-section > *:nth-child(12) { animation-delay: 0.6s; }
-.animated-section > *:nth-child(13) { animation-delay: 0.65s; }
-.animated-section > *:nth-child(14) { animation-delay: 0.7s; }
-.animated-section > *:nth-child(15) { animation-delay: 0.75s; }
-.animated-section > *:nth-child(16) { animation-delay: 0.8s; }
-.animated-section > *:nth-child(17) { animation-delay: 0.85s; }
-.animated-section > *:nth-child(18) { animation-delay: 0.9s; }
-.animated-section > *:nth-child(19) { animation-delay: 0.95s; }
-.animated-section > *:nth-child(20) { animation-delay: 1s; }
-
-.animated-section > *:nth-child(n+21) { animation-delay: 1s; }
-
-/* Fallback for unsupported CSS features */
-@supports not (animation-timeline: view()) {
-  .animated-section, .animated-section > * {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-}
-
-/* Utility Classes */
-.font-stalemate {
-  font-family: 'Stalemate', cursive;
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.blurr {
-  filter: blur(2px);
-}
-
-/* Background Classes */
-.cstm-bg {
-  background: rgba(131, 144, 111, 0.85) url('https://lh3.googleusercontent.com/drive-viewer/AKGpihblECUHVrWsouMAG7BerzCiJevbmaX30GFgM02yN6gU26uhoV5tVj5xxINRPmRNq3VD_5PGlnOHwIvIkn4EQfwGXolrWIcNFA=s1600-rw-v1') center/cover;
-}
-
 .bg-dual {
   position: relative;
-  background-color: rgba(131, 144, 111, 1);
+  background-color: rgba(131, 144, 111, 0.55);
+  background-position: center;
+  image-rendering: optimizeQuality;
 }
 
 .bg-dual::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('https://lh3.googleusercontent.com/drive-viewer/AKGpiha8eyUP2dqiG6zZ17_LIOSNCSnkrPRAuFZZ66mOZtePftYW5dSvq7tLd-IYgI647Y1z-v12-RbpZkRhrWp57BdFUYx80VL1-Rs=s1600-rw-v1') center/cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpiha8eyUP2dqiG6zZ17_LIOSNCSnkrPRAuFZZ66mOZtePftYW5dSvq7tLd-IYgI647Y1z-v12-RbpZkRhrWp57BdFUYx80VL1-Rs=s1600-rw-v1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
   opacity: 0.75;
-  animation: zoomOut 5s ease-in-out normal;
+  overflow: hidden;
+  animation: zoomOut3 5s ease-in-out forwards;
 }
 
 .bg-dual::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1') center/cover;
-  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1'),
+                    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1'),
+                    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1'),
+                    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1');
+  background-size: cover, cover, cover, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center, center, bottom left, bottom right;
+  z-index: 0;
   opacity: 1;
+  overflow: hidden;
   animation: zoomOut2 6s ease-in-out forwards;
 }
-
-.bg-card {
-  position: relative;
-  background: url('https://media.giphy.com/media/dlwGsKqnL4yCnScx2h/giphy.gif') center/cover;
-  opacity: 0.8;
-}
-
-.bg-card-2 {
-  position: relative;
-  background: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1') center/cover;
-  opacity: 1;
-}
-
-/* Aspect Ratios */
-.aspect-1-1 { aspect-ratio: 1 / 1; }
-.aspect-2-1 { aspect-ratio: 2 / 1; }
-.aspect-1-2 { aspect-ratio: 1 / 2; }
-.aspect-3-4 { aspect-ratio: 3 / 4; }
