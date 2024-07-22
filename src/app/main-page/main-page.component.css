@@ -1,0 +1,61 @@
+@keyframes zoomOut2 {
+  from {
+    transform: scale(1.6);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut3 {
+  from {
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.bg-dual {
+  position: relative;
+  background-color: rgba(131, 144, 111, 0.55);
+  background-position: center;
+  image-rendering: optimizeQuality;
+}
+
+.bg-dual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpiha8eyUP2dqiG6zZ17_LIOSNCSnkrPRAuFZZ66mOZtePftYW5dSvq7tLd-IYgI647Y1z-v12-RbpZkRhrWp57BdFUYx80VL1-Rs=s1600-rw-v1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.75;
+  overflow: hidden;
+  animation: zoomOut3 5s ease-in-out forwards;
+}
+
+.bg-dual::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1'),
+                    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihYy95YrfEMbv583tQrxxfMxyDNH4tb62VX6tA7ZJJc7XVqHXIlpAaBGCkdTByXQRwTY736ZtCBld7NCgTlX0L28vpoSbiMhkg=s1600-rw-v1'),
+                    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1'),
+                    url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1');
+  background-size: cover, cover, cover, cover;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: center, center, bottom left, bottom right;
+  z-index: 0;
+  opacity: 1;
+  overflow: hidden;
+  animation: zoomOut2 6s ease-in-out forwards;
+}
