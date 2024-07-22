@@ -5,16 +5,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ListTamuComponent } from './list-tamu/list-tamu.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', title: 'Nesi & Yogta', component: OpenPageComponent },
   {
     path: ':guestName',
     children: [
-      { path: '', component: OpenPageComponent },
+      { path: '', title: 'Nesi & Yogta', component: OpenPageComponent },
       { path: 'main', title: 'Nesi & Yogta', component: MainPageComponent },
       { path: 'listTamu8824882488248824', title: 'ListTamu88248824', component: ListTamuComponent },
     ]
   },
   { path: '404', component: NotFoundComponent },
-  { path: '**', redirectTo: '/404' }
+  { path: '', component: NotFoundComponent, pathMatch: 'full' }, // Redirect empty path to 404
+  { path: '**', component: NotFoundComponent } // Catch all invalid routes and redirect to 404
 ];

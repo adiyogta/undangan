@@ -55,14 +55,14 @@
 .animated-section {
   opacity: 0;
   transform: translateY(50px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.8s ease-out forwards;
   animation-timeline: view();
   animation-range: entry 30% cover 20%;
 }
 
 .animated-section > * {
   opacity: 0;
-  animation-duration: 0.6s;
+  animation-duration: 0.8s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
   animation-timeline: view();
