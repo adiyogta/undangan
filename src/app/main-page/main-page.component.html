@@ -122,8 +122,8 @@
       <div class="bg-[#fefae1] mb-6 shadow-lg pt-10 md:pt-12 pb-4 md:pb-8">
       <h1 class="text-6xl md:text-8xl font-semibold font-stalemate">Gallery</h1>
       </div>
-      <div class="container mx-auto px-4 scrollbar-hide overflow-y-auto flex-grow pb-8" style="max-height: calc(100vh - 8rem);">
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="container mx-auto px-4 scrollbar-hide overflow-y-auto flex-grow py-8" style="max-height: calc(120vh - 8rem);">
+        <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-6">
           @for (photo of photos; track photo.url; let i = $index) {
             <div class="cursor-pointer transition duration-300 ease-in-out transform hover:scale-105" (click)="openModal(i)">
               <img [src]="photo.url" [alt]="photo.title" class="w-full h-64 object-cover rounded-lg shadow-md animate__animated animate__fadeIn">
@@ -188,10 +188,10 @@
       </div>
   </div>
   
-  <div class="min-h-screen flex items-center justify-center bg-[#fefae1] bg-card-2 p-8 bg-opacity-75">
-    <div class="animated-section bg-[#8c9776] flex flex-col md:flex-row shadow-md rounded-xl overflow-hidden max-w-7xl relative mx-auto items-center justify-center">
+  <div class="animated-section min-h-screen flex items-center justify-center bg-[#fefae1] bg-card-2 p-8 bg-opacity-75">
+    <div class=" bg-[#8c9776] flex flex-col md:flex-row shadow-md rounded-xl overflow-hidden max-w-7xl relative mx-auto items-center justify-center">
         <img src="https://lh3.googleusercontent.com/drive-viewer/AKGpihaDyfVvvIm3AvsS_i200k9F5A21VQWNUTEgbQfwM4SQVB28LuLPHgJoEuwheDm5DKviBuyza3qmgeT3E0-S1KBCUR_BWKFATA=s1600-rw-v1" alt="Filter Instagram" class="h-full object-cover lg:w-96">
-        <div class="animated-section p-6 text-center w-96 px-8">
+        <div class="p-2 md:p-6 text-center w-96 px-4 py-6 md:px-8">
             <h2 class="text-2xl text-white font-semibold mb-2">Filter Instagram</h2>
             <p class="text-gray-100 mb-4">Gunakan instagram filter berikut untuk menambah kemeriahan acara</p>
             <a href="https://www.instagram.com/ar/2277169392626009/"  class="bg-[#fefae1] hover:text-white font-bold py-2 px-8 rounded-full hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
@@ -223,14 +223,16 @@
     <div class="animated-section min-h-screen max-h-screen flex items-center justify-center">
   
       <!-- Kartu yang Sudah Ada -->
-      <div class="bg-card-2 bg-[#fefae1] bg-opacity-80 min-h-screen w-full shadow-lg px-4 md:px-8 flex-col">
+      <div class="bg-card-2 bg-[#fefae1] bg-opacity-80 min-h-screen w-full shadow-lg px-4 md:px-8 flex-col mx-auto">
         <div class="animated-section container mx-auto flex flex-col min-h-screen items-center justify-center text-center">
           <div class="w-10/12 md:w-1/2 mb-4 lg:mb-6 p-4 md:p-2">
             <img [src]="preWeddingImage" alt="Pre-wedding photo" class="w-full h-auto rounded-lg shadow-lg">
            </div>
+           <div class="mb-4 lg:mb-2 p-4 md:p-2">
            <p class="text-md md:text-xl px-2 md:px-16 font-semibold text-center mb-6">Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</p>
             <p class="text-md md:text-xl font-semibold text-center mb-6">Kami Yang Berbahagia</p>
-            <h2 class="text-4xl md:text-6xl mb-2 font-stalemate">Nesi & Yogta</h2>
+            <p class="text-4xl md:text-6xl font-stalemate">Nesi & Yogta</p>
+          </div>
         </div>
       </div>
 
