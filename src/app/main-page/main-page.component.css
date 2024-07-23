@@ -1,4 +1,6 @@
-@import url('animations.css');
+@import url('common-animations.css');
+@import url('responsive-animations.css');
+@import url('section-animations.css');
 @import url('aspect-ratios.css');
 @import url('backgrounds.css');
 @import url('typography.css');

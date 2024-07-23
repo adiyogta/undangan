@@ -1,0 +1,22 @@
+/* responsive-animations.css */
+/* Responsif untuk berbagai perangkat */
+@media (max-width: 768px) {
+    .animated-section {
+      animation-duration: 4s;
+    }
+  
+    .animated-section > * {
+      animation-duration: 4s;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .animated-section {
+      animation-duration: 3s;
+    }
+  
+    .animated-section > * {
+      animation-duration: 3s;
+    }
+  }
+  
