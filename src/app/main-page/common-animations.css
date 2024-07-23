@@ -1,6 +1,4 @@
-
-@import url('common-animations-key.css');
-@-webkit-keyframes fadeInUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(200px);
@@ -11,7 +9,7 @@
   }
 }
 
-@-webkit-keyframes fadeInDown {
+@keyframes fadeInDown {
   from {
     opacity: 0;
     transform: translateY(-200px);
@@ -22,7 +20,7 @@
   }
 }
 
-@-webkit-keyframes fadeInLeft {
+@keyframes fadeInLeft {
   from {
     opacity: 0;
     transform: translateX(-200px);
@@ -33,7 +31,7 @@
   }
 }
 
-@-webkit-keyframes fadeInRight {
+@keyframes fadeInRight {
   from {
     opacity: 0;
     transform: translateX(200px);
@@ -44,7 +42,7 @@
   }
 }
 
-@-webkit-keyframes fadeInZoom {
+@keyframes fadeInZoom {
   from {
     opacity: 0;
     transform: scale(0.2);
@@ -53,4 +51,11 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Fallback for older browsers */
+.no-animations .animated-section, .no-animations .animated-section > * {
+  opacity: 1;
+  transform: none;
+  animation: none;
 }

@@ -11,7 +11,7 @@ import { WeddingGiftComponent } from "../wedding-gift/wedding-gift.component";
   standalone: true,
   imports: [MusikComponent, FooterComponent, GuestListComponent, GuestFormComponent, CommonModule, WeddingGiftComponent],
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css', './common-animations.css', './common-animations-key.css', './responsive-animations.css','./section-animations.css','./aspect-ratios.css', './backgrounds.css', './typography.css']
+  styleUrls: ['./main-page.component.css', './common-animations.css', './responsive-animations.css','./section-animations.css','./aspect-ratios.css', './backgrounds.css', './typography.css']
 })
 export class MainPageComponent implements OnInit {
   ngOnInit(): void {
