@@ -1,4 +1,4 @@
-import { Component,AfterViewInit, Renderer2, effect, signal, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component,AfterViewInit, Renderer2, effect, signal, ViewChild, ElementRef, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { MusikComponent } from '../musik/musik.component';
 import { FooterComponent } from "../footer/footer.component";
 import { GuestListComponent } from "../guest-list/guest-list.component";
@@ -11,55 +11,43 @@ import { WeddingGiftComponent } from "../wedding-gift/wedding-gift.component";
   standalone: true,
   imports: [MusikComponent, FooterComponent, GuestListComponent, GuestFormComponent, CommonModule, WeddingGiftComponent],
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css', './common-animations.css', './responsive-animations.css','./section-animations.css','./aspect-ratios.css', './backgrounds.css', './typography.css']
+  styleUrls: ['./main-page.component.css','./aspect-ratios.css', './backgrounds.css', './typography.css']
 })
-export class MainPageComponent implements OnInit {
-  ngOnInit(): void {
-    this.initIntersectionObserver();
+export class MainPageComponent implements AfterViewInit {
+  constructor(private renderer: Renderer2) {this.startCountdown();}
+
+  // ----------------------------------------
+
+  animations = ['fadeInUp', 'fadeInLeft', 'fadeInRight', 'zoomIn', 'bounceIn'];
+
+  @ViewChildren('animatedItem') animatedItems!: QueryList<ElementRef>;
+
+  ngAfterViewInit() {
+    this.initScrollAnimation();
   }
 
-  initIntersectionObserver() {
-    const elements = document.querySelectorAll('.animated-section');
+  private initScrollAnimation() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            this.renderer.setStyle(entry.target, 'opacity', '1');
+            this.renderer.addClass(entry.target, 'animate');
+            this.renderer.addClass(entry.target, this.animations[index % this.animations.length]);
+            this.renderer.addClass(entry.target, 'animated'); // Menandai bahwa elemen telah dianimasikan
+            
+            // Hapus kelas animasi setelah animasi selesai
+            setTimeout(() => {
+              this.renderer.removeClass(entry.target, 'animate');
+              this.animations.forEach(anim => this.renderer.removeClass(entry.target, anim));
+            }, 6000); // Sesuaikan dengan durasi animasi terlama
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Apply animation classes based on your logic
-          this.applyAnimationClasses(entry.target as HTMLElement);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    elements.forEach(element => observer.observe(element));
-  }
-
-  private applyAnimationClasses(element: HTMLElement) {
-    const index = Array.from(element.parentElement!.children).indexOf(element) + 1;
-    const delay = this.getAnimationDelay(index);
-
-    // Remove default classes
-    element.classList.remove('opacity-0');
-
-    // Add animation classes based on index
-    if (index % 6 === 1) element.classList.add('fadeInUp');
-    else if (index % 6 === 2) element.classList.add('fadeInLeft');
-    else if (index % 6 === 3) element.classList.add('fadeInRight');
-    else if (index % 6 === 4) element.classList.add('fadeInDown');
-    else if (index % 6 === 5) element.classList.add('fadeInZoom');
-    else element.classList.add('fadeInUp');
-
-    // Apply delay
-    element.style.animationDelay = delay;
-  }
-
-  private getAnimationDelay(index: number): string {
-    const delays = [
-      '0.5s', '1s', '1.5s', '2s', '2.5s', '3s',
-      '3.5s', '4s', '4.5s', '5s', '5.5s', '6s',
-      '6.5s', '7s', '7.5s', '8s', '8.5s', '9s',
-      '9.5s', '10s'
-    ];
-    return delays[index - 1] || '10s';
+    this.animatedItems.forEach(item => observer.observe(item.nativeElement));
   }
 
 // -----------------
@@ -94,8 +82,6 @@ export class MainPageComponent implements OnInit {
 
   showModal = false;
   currentIndex = 0;
-
-  constructor(private renderer: Renderer2) {this.startCountdown();}
 
   openModal(index: number) {
     this.currentIndex = index;

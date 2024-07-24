@@ -15,13 +15,10 @@
     position: relative;
     background-image: url('https://media.giphy.com/media/dlwGsKqnL4yCnScx2h/giphy.gif'),
                       url('https://media.giphy.com/media/tNE9AUld7oQhBmLcfE/giphy.gif');
-    background-position: center;
     image-rendering: optimizeQuality;
-    background-size: 85%;
+    background-size: 95%;
     background-repeat: no-repeat;
-    background-position: top, center;
-    opacity: 0.8;
-  }
+    background-position: top, top;}
   
   .bg-card-2 {
     position: relative;
