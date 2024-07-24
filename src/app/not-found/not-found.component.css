@@ -1,0 +1,11 @@
+.bg-card-2 {
+    position: relative;
+    background-image: url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1'),
+                      url('https://lh3.googleusercontent.com/drive-viewer/AKGpihak2AHEBz366FARh7ajEQ_bsbMyzvvIrN0_OpyRS4lCPSZ_1sBm5X9Il352whh6u6ECC48QGxrya_AJRvKqmPk96wXMA0M5KhM=s1600-rw-v1');
+    background-position: center;
+    image-rendering: optimizeQuality;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top, left bottom;
+    opacity: 1;
+  }
