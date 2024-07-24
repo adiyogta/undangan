@@ -13,6 +13,7 @@
 }
 
 .atm-card button {
+  white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +32,7 @@
   
   @media (min-width: 640px) {
     .atm-card {
-      max-width: 320px;
+      max-width: 100%;
     }
   }
   
