@@ -67,9 +67,15 @@ export class GuestFormComponent {
   }
 
   private handleSuccess() {
-    this.showModal('Sukses', `Terima kasih, ${this.guest.nama}! Data kehadiran Anda telah terkirim.`);
-    this.resetForm();
-    this.formSubmitted.emit();
+    let message = `Terima kasih, ${this.guest.nama} Data kehadiran Anda telah terkirim.`;
+  
+  if (this.guest.kehadiran.toLowerCase().includes('hadir')) {
+    message += ' Terima kasih juga sudah ingin hadir di pernikahan kami.';
+  }
+  
+  this.showModal('Sukses', message);
+  this.resetForm();
+  this.formSubmitted.emit();
   }
 
   private showModal(title: string, message: string) {

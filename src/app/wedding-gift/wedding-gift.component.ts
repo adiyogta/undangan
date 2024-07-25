@@ -14,6 +14,16 @@ export class WeddingGiftComponent {
   toastMessage = '';
   toastBackground = '';
 
+  showQRModal: boolean = false;
+
+  openQRModal() {
+    this.showQRModal = true;
+  }
+
+  closeQRModal() {
+    this.showQRModal = false;
+  }
+
   toggleBankCards() {
     this.showBankCards = !this.showBankCards;
   }
@@ -22,7 +32,7 @@ export class WeddingGiftComponent {
   copyToClipboard(text: string) {
     navigator.clipboard.writeText(text).then(
       () => {
-        this.showToastMessage('Nomor rekening berhasil disalin', 'success');
+        this.showToastMessage('Nomor rekening berhasil disalin, Terima Kasih', 'success');
       },
       (err) => {
         this.showToastMessage('Gagal menyalin nomor rekening', 'error');
