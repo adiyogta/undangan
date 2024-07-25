@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
-import { fromEvent, Subscription } from 'rxjs';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-musik',
@@ -7,77 +6,47 @@ import { fromEvent, Subscription } from 'rxjs';
   templateUrl: './musik.component.html',
   styleUrls: ['./musik.component.css']
 })
-export class MusikComponent implements OnInit, AfterViewInit, OnDestroy {
-  audioPlayer?: HTMLAudioElement;
+export class MusikComponent implements OnInit, AfterViewInit {
+  audioPlayer!: HTMLAudioElement;
   isPlaying: boolean = false;
   audioSource = '/assets/ph.mp3'; // Ganti dengan path file audio Anda
-  private visibilitySubscription?: Subscription;
 
   constructor() {}
 
   ngOnInit(): void {
-    if (typeof Audio !== 'undefined') {
-      this.audioPlayer = new Audio(this.audioSource);
-      this.audioPlayer.loop = true;  // Membuat audio berulang
+    this.audioPlayer = new Audio();
+    this.audioPlayer.src = this.audioSource;
 
-      const shouldPlayMusicStr = localStorage.getItem('shouldPlayMusic');
-      this.isPlaying = shouldPlayMusicStr === 'true';
+    const shouldPlayMusicStr = localStorage.getItem('shouldPlayMusic');
+    this.isPlaying = shouldPlayMusicStr === 'true';
 
-      if (this.isPlaying) {
-        this.playMusic();
-      }
-
-      // Menangani perubahan visibilitas halaman
-      if (typeof document !== 'undefined') {
-        this.visibilitySubscription = fromEvent(document, 'visibilitychange').subscribe(() => {
-          if (document.hidden) {
-            this.pauseMusic();
-          } else if (this.isPlaying) {
-            this.playMusic();
-          }
-        });
-      }
+    if (this.isPlaying) {
+      this.playMusic();
     }
   }
 
   ngAfterViewInit(): void {
-    if (this.audioPlayer) {
-      this.audioPlayer.onended = () => {
-        if (this.isPlaying) {
-          this.playMusic();
-        }
-      };
-    }
-  }
-
-  ngOnDestroy(): void {
-    this.pauseMusic();
-    if (this.audioPlayer) {
-      this.audioPlayer.src = '';
-    }
-    this.visibilitySubscription?.unsubscribe();
+    this.audioPlayer.autoplay = true;
+    this.audioPlayer.loop = true;
+    this.audioPlayer.onended = () => {
+      this.isPlaying = false;
+    };
   }
 
   togglePlayPause() {
-    this.isPlaying = !this.isPlaying;
-    localStorage.setItem('shouldPlayMusic', this.isPlaying.toString());
-    
     if (this.isPlaying) {
-      this.playMusic();
-    } else {
       this.pauseMusic();
+    } else {
+      this.playMusic();
     }
+    this.isPlaying = !this.isPlaying;
   }
 
   playMusic() {
-    if (this.audioPlayer) {
-      this.audioPlayer.play().catch(error => console.error('Error playing audio:', error));
-    }
+    this.audioPlayer.play();
   }
 
   pauseMusic() {
-    if (this.audioPlayer) {
-      this.audioPlayer.pause();
-    }
+    this.audioPlayer.pause();
   }
 }
