@@ -43,6 +43,6 @@ export class WeddingGiftComponent {
 
     setTimeout(() => {
       this.showToast = false;
-    }, 3000); // Hapus toast setelah 3 detik
+    }, 2000); // Hapus toast setelah 3 detik
   }
 }
